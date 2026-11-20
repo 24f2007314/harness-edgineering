@@ -342,22 +342,7 @@ if environment == "production":
         return "review"
 
     return "allow"
-```
 
-**What this does:**
-
-- Checks explicit user authorization.
-- Checks that the preflight is visible and successful.
-- Checks that an exact rollback plan exists.
-- Allows the production operation only when all three conditions pass.
-
-The `preflight` and `rollbackPlan` structures here are the fields we're using for our tests. We will need to align them with the actual field names and structure in the assignment's incoming cases.
-
-## Step 2 — Add three production tests
-
-Open `test_classifier.py` and add this code at the bottom:
-
-<CodeBlock language="python" editable>
 def create_production_case(preflight=None, rollback=None):
     resolved = {
         "operation": "update",
